@@ -1,0 +1,9 @@
+Interpretation
+“Arson” and “Campfire” are the two predictors selected by the model that have an impact on the fires whose size is less or equal to 0.25 acres.
+The cross validation error rate (xerror) is reduced as we further split the tree and its lowest value is associated with the tree that best fits the data: This is tree number 3. Thus, when the number of fires due to a campfire is greater than 4, we have the highest number (81) of fires whose size is less or equal to 0.25 acres. 
+
+Limitations:
+Because Rattle only allows one target variable, it was not possible to correctly study the relationship between fires causes and their sizes. To properly answer the research question, it would have been more appropriate to use the fire causes as the model input variables to predict the number of fire in each of the 7 fire size categories, which means having to define more than one target variables.
+
+Conclusion
+This model tends to suggest that small size wildfire are affected by two causes variables namely arson and campfire. However, the greatest number of small size wildfire is associated with the campfire predictor. The information gained from the model can potentially be used to improve firefighting detection management. Depending on the extent of the damage (in terms of number of acres burned, properties damaged) caused by small fires, decision makers can determine how much money needs to be allocated to monitor areas prone to campfire.
