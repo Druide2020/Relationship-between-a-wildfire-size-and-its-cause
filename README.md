@@ -2,9 +2,9 @@
 A decision tree is constructed to help analyze two datasets containing wildfire data statistics in order to determine if a wildfire cause have an effect on its size. The data is available on the California Fire Protection Department website (https://www.fire.ca.gov/media/10060/2016_redbook_final.pdf).
 
 Among all the available datasets, only two were selected as they seemed to be the most appropriate for the study:
-1) Wildfire cause by county
+1) Wildfire cause by county:
 This dataset gives an idea of the most frequent causes of wildfire in each country in California. Twelve (12) causes (arson, campfire, debris burning, vehicle, undetermined, electrical power, smoking, equipment use, Playing-with-fire, lightning, railroad and miscellaneous) have been identified and the dataset lists the number of fires according to their origin.
-2) Wildfire size by county
+2) Wildfire size by county:
 Each fire that occurs is classified according to its size. Seven (7) size categories are defined in the dataset:
   a) 0-0.25 acres b) 0.26-99 acres c) 10-99 acres d) 100-299 acres e) 300-999 acres f) 1000-4999 acres and g) 5000+ acres
 
