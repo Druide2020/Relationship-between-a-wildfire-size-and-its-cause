@@ -6,7 +6,7 @@ Among all the available datasets, only two were selected as they seemed to be th
 This dataset gives an idea of the most frequent causes of wildfire in each country in California. Twelve (12) causes (arson, campfire, debris burning, vehicle, undetermined, electrical power, smoking, equipment use, Playing-with-fire, lightning, railroad and miscellaneous) have been identified and the dataset lists the number of fires according to their origin.
 2) Wildfire size by county
 Each fire that occurs is classified according to its size. Seven (7) size categories are defined in the dataset:
-  1) 0-0.25 acres 2) 0.26-99 acres 3) 10-99 acres 4) 100-299 acres 5) 300-999 acres 6) 1000-4999 acres and 7) 5000+ acres
+  a) 0-0.25 acres b) 0.26-99 acres c) 10-99 acres d) 100-299 acres e) 300-999 acres f) 1000-4999 acres and g) 5000+ acres
 
 #Data processing
 - The first data preparation step consisted in merging both datasets based on one common variable (county).
