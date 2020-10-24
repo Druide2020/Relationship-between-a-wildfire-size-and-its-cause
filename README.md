@@ -1,0 +1,1 @@
+# Relationship-between-a-wildfire-size-and-its-cause
