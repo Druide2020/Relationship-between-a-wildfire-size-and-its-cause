@@ -1,0 +1,46 @@
+#The fire size is presented in the original dataset as a continuous variable so I decided to reclassify the values:
+#1: 0-0.25 acres
+#2: 0.26-99 acres
+#3: 10-99 acres  
+#4: 100-299 acres 
+#5: 300-999 acres 
+#6: 1000-4999 acres
+#7: 5000+ acres
+
+Dat1 <-read.csv(file="C://Users//Anne//Documents//SNHU//DAT520-Decision_Methods_And_Modelling//Final _project//2016_Redbook_FiresByCause_ByCounty.csv", header = T)
+
+
+Dat2 <-read.csv(file="C://Users//Anne//Documents//SNHU//DAT520-Decision_Methods_And_Modelling//Final _project// 2016_Redbook_FiresBySize_ByCounty.csv", header = T)
+
+df1 <- subset(Dat1, select = -c(X))
+df2 <- subset(Dat2, select = -c(X))
+
+colnames(df2)[colnames(df2)=="X.25.acres.or.."] <- "1"
+> colnames(df2)[colnames(df2)=="X.26.9.99.acres"] <- "2"
+> colnames(df2)[colnames(df2)=="X10.99.acres"] <- "3"
+> colnames(df2)[colnames(df2)=="X100.299.acres"] <- "4"
+> colnames(df2)[colnames(df2)=="X300.999.acres"] <- "5"
+> colnames(df2)[colnames(df2)=="X1000.4999.acres"] <- "6"
+> colnames(df2)[colnames(df2)=="X5000.acres.."] <- "7"
+
+dataset<- merge(df1, df2, by="COUNTY") # This script is to merge the datasets
+dataset <- subset(dataset, select= -c(Total.y)) # Cleanses the data by removing the county where the is no wildfire.
+
+head(dataset) #This allows to have an idea of the first data since the dataset is large.
+     COUNTY Total.x Arson Campfire Debris.Burning Elec..Power Equip..Use Ltng. Misc. P.W.F Railroad Smoking Undet.
+1   Alameda      39     0        0              0           8          4     0     4     0        0       0     16
+2    Alpine       0     0        0              0           0          0     0     0     0        0       0      0
+3    Amador      57     2        0             17           6          7     1     7     0        0       3      5
+4     Butte       0     0        0              0           0          0     0     0     0        0       0      0
+5 Calaveras      94     1        3             22           9         14     0    12     2        0       1     21
+6    Colusa       4     1        1              0           0          0     0     0     0        0       0      0
+  Vehicle  1  2 3 4 5 6 7
+1       7 10 20 9 0 0 0 0
+2       0  0  0 0 0 0 0 0
+3       9 29 21 6 1 0 0 0
+4       0  0  0 0 0 0 0 0
+5       9 54 28 9 0 3 0 0
+6       2  3  1 0 0 0 0 0
+
+> 
+
