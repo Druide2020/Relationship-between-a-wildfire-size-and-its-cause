@@ -1,0 +1,43 @@
+#Rattle was used to build a bottom up decision tree. The choice of the bottom up model seems to be the most appropriate as I am trying to use the raw data to reveal a trend in the dataset.
+The target value is the fires whose size is less or to equal to 0.25 acres.  
+Because the target variable (size) is a numerical value, the type of decision tree is regression.
+Regression tree function:
+rpart(formula = X1 ~ ., data = crs$dataset[crs$train, c(crs$input, 
+    crs$target)], method = "anova", parms = list(split = "information"), 
+    control = rpart.control(usesurrogate = 0, maxsurrogate = 0))
+As the function used to build the tree indicates, the model aim is to predict the X1(the number of fires with a size of 0.25 acres or less) based on the remainder of variables (fire causes) in the dataset (I decided to ignore the variable county as the final model was considering the county as the sole predictor).
+
+
+Results
+ 
+
+The tree structure is as following:
+n= 31 
+node), split, n, deviance, yval
+1) root 31 26730.970 34.03226  
+  2) Campfire< 4 24  6117.333 20.33333  
+    4) Arson< 1.5 12  1793.000 10.50000 *
+    5) Arson>=1.5 12  2003.667 30.16667 *
+  3) Campfire>=4 7   668.000 81.00000 *
+The complexity table that reflects the model performance is below:
+Revised model :
+Root node error: 26731/31 = 862.29
+        CP nsplit rel error  xerror    xstd
+1 0.746162      0   1.00000 1.10767 0.21237
+2 0.086816      1   0.25384 0.51752 0.16172
+3 0.010000      2   0.16702 0.44399 0.16130
+Initial tree:
+Root node error: 43761/35 = 1250.3
+n= 35 
+        CP nsplit rel error  xerror    xstd
+1 0.787875      0   1.00000 1.04445 0.28293
+2 0.056391      1   0.21212 0.36678 0.12194
+3 0.010000      2   0.15573 0.37369 0.12400
+
+
+
+Model Evaluation
+I used the Predicted vs. Observed chart option available in Rattle to evaluate the model.
+Pseudo-R squared which is a measure of the correlation between the predicted and observed values, is equal to 0.81. A Pseudo-R squared close to 1 indicates that the model has a good predictive characteristic and that the model fits the data.
+ 
+
